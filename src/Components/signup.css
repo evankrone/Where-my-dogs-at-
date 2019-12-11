@@ -1,0 +1,26 @@
+.signup {
+    height: 300px;
+    position: absolute;
+    display: block;
+    top: 60%;
+    left: 45%;
+   }
+
+.btn {
+    background-color: #f1f1f1;
+    opacity: 75%;
+    color: black;
+    font-family: futura;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+   }
+
+.btn:hover{
+    background-color:  rgb(4, 181, 252);
+    color: white;
+}

@@ -1,0 +1,106 @@
+.walktitle{
+    position: relative ;
+    font-size: 75px;
+    font-family: shrikhand;
+    left: 27.5%;
+    width:45%;
+    color: #f9f8eb;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+.cardcontainer {
+    left: 2%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);      
+}
+
+
+.card {
+    top:15%;
+    left: 58%;
+    position: relative;
+    display: grid;
+    align-items: flex-start;
+    justify-content: center;
+    width: 250px;
+    height: 350px;
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 100px ;
+    background: linear-gradient(to bottom, #05004e 30%, #f9f8eb 30%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(187, 86, 4, 0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+    overflow: hidden;
+}
+
+.cardtitle {
+    /* color: #f9f8eb; */
+    font-family: futura;
+    left:150%;
+    position: relative;
+}
+
+.cardimg {
+    justify-self: center;
+    height: 70px;
+    width: 70px;
+    border: solid white 5px;
+    border-radius: 50%;
+}
+
+.cardname{
+    color: black;
+    position: relative;
+    top: 20%;
+    font-family: futura;
+    justify-self: center;
+}
+
+.cardphone{
+    color: black;
+    position: relative;
+    top: 20%;
+    font-family: futura;
+    justify-self: center;
+}
+
+.cardrating {
+    font-size: xx-large;
+        color: #fd5f00;
+        justify-self: center;
+        position: relative;
+        top: -10%;
+}
+
+.backbtn {
+    position: relative;
+    display: block;
+    justify-self: center;
+    left: 50%;
+    margin-top: 5%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #05004e;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-family: futura;
+    font-weight: bold;
+    padding: 16px 30px;
+    
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    }
+
+    .backbtn:hover {
+        background-color:#fd5f00;
+        color: #f9f8eb;    
+    }

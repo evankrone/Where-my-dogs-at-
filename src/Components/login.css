@@ -1,0 +1,29 @@
+
+
+  .lbutton:hover {
+    background-color: #fd5f00;
+    color: white;
+  }
+
+  .rbutton:hover {
+    background-color: #fd5f00;
+    color: white;
+  
+  }
+
+  .login {
+    height: 200px;
+    position: absolute;
+    display: block;
+    top: 60%;
+    left: 40%;
+   }
+   
+   .email {
+    font-style: italic;
+    left: 4%;
+   }
+   
+   .password {
+    font-style: italic;
+   }

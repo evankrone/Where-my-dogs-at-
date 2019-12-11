@@ -1,0 +1,86 @@
+  .dash {
+    height: 200px;
+    width: 5%;
+    position: absolute;
+    display: block;
+    top: 60%;
+    left: 43%;
+   }
+
+   .topbtn {
+    position: absolute;
+    display: block;
+    width: 300px;
+    top: 6%;
+    left: 125%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #76b39d;
+    color: white;
+    font-family: futura;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+   }
+
+  .leftbtn {
+    position: absolute;
+    display: block;
+    width: 300px;
+    top: 38%;
+    left: 125%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #76b39d;
+    color: white;
+    font-family: futura;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+
+  .rightbtn {
+    position: absolute;
+    display: block;
+    width: 300px;
+    top: 70%;
+    left: 125%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #05004e;
+    color: white;
+    font-size: 16px;
+    font-family: futura;
+    font-weight: bold;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+
+  .topbtn:hover {
+    background-color:#fd5f00;
+    color: white;
+  }
+
+  .leftbtn:hover {
+    background-color:#fd5f00;
+    color: white;
+  }
+
+  .rightbtn:hover {
+    background-color:#fd5f00;
+    color: white;
+  }
+
