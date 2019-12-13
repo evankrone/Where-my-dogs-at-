@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import Walk from './Walk.js'
 import {
   withGoogleMap,
   GoogleMap,
@@ -11,9 +10,7 @@ import {
 import './Map.css';
 import hydrant from './hydrant.png'
 
-
 const mapStyle = [
- 
     {
       "elementType": "geometry",
       "stylers": [
@@ -235,61 +232,49 @@ const mapStyle = [
           "color": "#92998d"
         }
       ]
-    }
-    
+    } 
   ]
 
 
 class MapWithMarkers extends React.Component {
   constructor(){
     super()
-    
     this.addMarker = this.addMarker.bind(this)
-
     this.state = {
     places: [],
     directions: [],
     owner_id: "",
     walker_id: null,
     completed: false,
-    i: 3
-    
-   
-  };
-}
+    i: 3 
+    };
+  }
 
   addMarker(e) {
     if(this.state.places.length < 3){
-  
-  console.log(e.qa);
-  console.log(this.props.currentUser.id)
-  
-  const newPlace = {
-    id: this.state.places.length,
-    lat: e.latLng.lat(),
-    lng: e.latLng.lng()
-  };
+      console.log(e.qa);
+      console.log(this.props.currentUser.id)
+      const newPlace = {
+        id: this.state.places.length,
+        lat: e.latLng.lat(),
+        lng: e.latLng.lng()
+      };
 
-  this.setState({
-    places: [...this.state.places, newPlace],
-    i: this.state.i -1
-   
-  }); 
-}
-}
+      this.setState({
+        places: [...this.state.places, newPlace],
+        i: this.state.i -1 
+      }); 
+    }
+  }
 
-componentDidUpdate() {
-    if(this.state.places.length === 3) {
-     
-      
-    const directionsService = new window.google.maps.DirectionsService();
-    const origin = { lat: this.state.places[0].lat, lng: this.state.places[0].lng }
-    const destination = { lat: this.state.places[0].lat, lng: this.state.places[0].lng}
-    const waypoints= [{ location: `${this.state.places[1].lat}, ${this.state.places[1].lng}`, stopover: true },{ location: `${this.state.places[2].lat}, ${this.state.places[2].lng}`, stopover: true}]
+  componentDidUpdate() {
+    if(this.state.places.length === 3) { 
+      const directionsService = new window.google.maps.DirectionsService();
+      const origin = { lat: this.state.places[0].lat, lng: this.state.places[0].lng }
+      const destination = { lat: this.state.places[0].lat, lng: this.state.places[0].lng}
+      const waypoints= [{ location: `${this.state.places[1].lat}, ${this.state.places[1].lng}`, stopover: true },{ location: `${this.state.places[2].lat}, ${this.state.places[2].lng}`, stopover: true}]
     
-    
-
-    directionsService.route(
+      directionsService.route(
       {
         origin: origin,
         destination: destination,
@@ -307,31 +292,27 @@ componentDidUpdate() {
           console.error(`error fetching directions ${result}`);
         }
       }
-    );
+      );
     }
-
-
   }
 
   createWalk = (e)  => {
     console.log('creating route')
-    // e.preventDefault()
     fetch('http://localhost:3000/walks', {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
-                body: JSON.stringify({
-                    owner_id: this.state.owner_id,
-                    walker_id: this.state.walker_id,
-                    completed: this.state.completed
-                })
-              });
-    }
+      method: 'POST',
+      headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        owner_id: this.state.owner_id,
+        walker_id: this.state.walker_id,
+        completed: this.state.completed
+      })
+      });
+  }
 
-render() {
-    
+  render() {
     return (
       <div>
         <GoogleMap
@@ -340,36 +321,32 @@ render() {
           defaultZoom={this.props.zoom}
           defaultCenter={this.props.center}
           defaultOptions={{styles:mapStyle}}
-        >
-            
+        >  
           {this.state.places.map(place => {
             return (
               <>
-              
-                  <Marker
-                    className='marker'
-                    key={place.id}
-                    position={{ lat: place.lat, lng: place.lng }}
-                    icon={hydrant}
-                    size={new window.google.maps.Size(71, 71)}
-                  />
-                  <DirectionsRenderer
-                    directions={this.state.directions}
-                 />
+                <Marker
+                  className='marker'
+                  key={place.id}
+                  position={{ lat: place.lat, lng: place.lng }}
+                  icon={hydrant}
+                  size={new window.google.maps.Size(71, 71)}
+                />
+                <DirectionsRenderer
+                  directions={this.state.directions}
+                />
               </>   
             );
-          })
-          }
+          })}
           <div className='overlay'>
-        <h1 className='counter'> Choose {this.state.i} marker(s)</h1>
-          <Link to='/walkers'><button className='button' onClick={this.createWalk}>Create Route</button></Link>
+            <h1 className='counter'> Choose {this.state.i} marker(s)</h1>
+            <Link to='/walkers'><button className='button' onClick={this.createWalk}>Create Route</button></Link>
           </div>
         </GoogleMap>
       </div>
     );
   }
 }
-
 
 export default withScriptjs(withGoogleMap(MapWithMarkers));
 

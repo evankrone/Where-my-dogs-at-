@@ -47,15 +47,13 @@ export class OwnerSignup extends Component {
                     alert(response.errors)
                 } else {
                     this.props.setUser(response.owner)
-                    localStorage.token = response.token //in app.js we need to make a method that sets the current user and redirects to the approriate route i.e ownersdashboard or walkersdashboard
+                    localStorage.token = response.token 
                     this.props.history.push(`/owner/${this.props.currentUser.id}`)
                 }
-               
-
             })
         } else {
         alert('Password Confirmation does not match Password.')
-      }
+        }
     }
   
    

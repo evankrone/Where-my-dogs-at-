@@ -2,12 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './Landing.css';
 
-
-
 export class Landing extends Component {
-
-
-    
     render() {
         return (
             <div>
