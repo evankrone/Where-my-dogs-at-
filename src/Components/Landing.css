@@ -63,10 +63,10 @@
 
   .rbutton {
     position: absolute;
-    width: 47%;
+    width: 4%;
     display: block;
     top: 76%;
-    left: 80.5%;
+    left: 8%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color:#76b39d;
